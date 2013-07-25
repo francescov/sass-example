@@ -1,0 +1,52 @@
+/* style.scss */
+
+/* variables are created with the preceding $ symbol */
+$main-color: #ce4dd6;
+$style: solid;
+$navbar-width: 800px;
+$items: 5;
+$navbar-color: #ce4dd6;
+
+
+#navbar {
+  width: 80%;
+  height: 23px;
+}
+
+/* Also, you can use standard math operations (+,-,*,/, and % [mod]) */
+
+li {
+  float: left;
+  width: $navbar-width/$items - 10px;
+  /* you are setting the width to your variable ("800px") dividing by */
+  /* your items variable ("5") and subtracting it by 10px */
+  background-color: lighten($navbar-color, 20%);
+  &:hover {
+    background-color:
+        lighten($navbar-color, 10%);
+        /* colors also have functions such as lightness, hue, saturation */
+	/* lighten (color, amount) -- amount is a percentage */
+  }
+}
+
+$vert: top;
+$horz: left;
+$radius: 10px;
+
+.rounded-#{$vert}-#{$horz} {
+   border-#{$vert}-#($horz)-radius: $radius;
+   /* border-top-left-radius: 10px; */
+   -moz-border-radius-#{$vert}#{$horz}: $radius;
+   /* -moz-border-radius-top-left: 10px; */
+   -webkit-border-#{$vert}-#{$horz}-radius: $radius;
+   /* -webkit-border-top-left-radius: 10px; */
+}
+
+
+
+/* the above will translate to CSS */
+.rounded-top-left {
+  border-top-left-radius: 10px;
+  -moz-border-radius-top-left: 10px;
+  -webkit-border-top-left-radius: 10px;
+}
